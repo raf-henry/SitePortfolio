@@ -7,14 +7,14 @@
         </div>
         <nav class="hidden md:flex gap-gutter items-center font-body-md text-body-md">
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
-                (click)="featuredProjects.scrollIntoView({ behavior: 'smooth' })">
-                Projetos
+                (click)="education.scrollIntoView({ behavior: 'smooth' })">
+                Formação
                 <span
                     class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
-                (click)="education.scrollIntoView({ behavior: 'smooth' })">
-                Formação
+                (click)="featuredProjects.scrollIntoView({ behavior: 'smooth' })">
+                Projetos
                 <span
                     class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
@@ -57,6 +57,42 @@
             class="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-[600px] pointer-events-none blur-[120px] rounded-full bg-gradient-to-tr from-primary/20 via-tertiary/10 to-transparent animate-blob-float">
         </div>
     </section>
+    <!-- Education Section -->
+    <section #education class="max-w-container-max mx-auto px-margin py-stack-xl">
+        <div class="mb-stack-lg flex justify-center items-center border-b border-outline-variant/20 pb-4">
+            <h2 class="font-headline-lg text-headline-lg text-on-surface text-center">Formação</h2>
+        </div>
+        <div class="flex justify-center">
+            <div class="w-full max-w-4xl group relative bg-surface-container-low p-10 lg:p-14 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] overflow-hidden">
+                <!-- Decorative element -->
+                <div class="absolute -right-16 -top-16 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-500"></div>
+                
+                <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+                    <div class="flex-grow">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-10 h-0.5 bg-primary/40"></span>
+                            <p class="text-primary font-label-md uppercase tracking-[0.2em] text-xs">
+                                3º semestre • Conclusão prevista para 12/2027
+                            </p>
+                        </div>
+                        <h3 class="font-headline-lg text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors duration-500 leading-tight">
+                            Análise e Desenvolvimento de Sistemas
+                        </h3>
+                        <div class="flex items-center gap-3 text-on-surface-variant">
+                            <span class="material-symbols-outlined text-primary/70">location_on</span>
+                            <p class="font-body-md text-body-md uppercase tracking-wider">
+                                UNIGOIÁS – CENTRO UNIVERSITÁRIO DE GOIÁS
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden md:flex flex-shrink-0 w-24 h-24 md:mr-10 rounded-full bg-primary/5 items-center justify-center border border-primary/10 group-hover:border-primary/30 group-hover:bg-primary/10 transition-all duration-700">
+                        <span class="material-symbols-outlined text-primary animate-float-subtle" style="font-size: 40px;">school</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Featured Projects -->
     <section #featuredProjects class="max-w-container-max mx-auto px-margin py-stack-xl">
         <div class="mb-stack-lg flex justify-center items-center border-b border-outline-variant/20 pb-4">
@@ -203,41 +239,7 @@
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section #education class="max-w-container-max mx-auto px-margin py-stack-xl">
-        <div class="mb-stack-lg flex justify-center items-center border-b border-outline-variant/20 pb-4">
-            <h2 class="font-headline-lg text-headline-lg text-on-surface text-center">Formação</h2>
-        </div>
-        <div class="flex justify-center">
-            <div class="w-full max-w-3xl group relative bg-surface-container-low p-8 lg:p-12 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] overflow-hidden">
-                <!-- Decorative element -->
-                <div class="absolute -right-16 -top-16 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-500"></div>
-                
-                <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
-                    <div class="flex-grow">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="w-10 h-0.5 bg-primary/40"></span>
-                            <p class="text-primary font-label-md uppercase tracking-[0.2em] text-xs">
-                                3º semestre • Conclusão prevista para 12/2027
-                            </p>
-                        </div>
-                        <h3 class="font-headline-lg text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors duration-500 leading-tight">
-                            Análise e Desenvolvimento de Sistemas
-                        </h3>
-                        <div class="flex items-center gap-3 text-on-surface-variant">
-                            <span class="material-symbols-outlined text-primary/70">location_on</span>
-                            <p class="font-body-md text-body-md uppercase tracking-wider">
-                                UNIGOIÁS – CENTRO UNIVERSITÁRIO DE GOIÁS
-                            </p>
-                        </div>
-                    </div>
-                    <div class="hidden md:flex flex-shrink-0 w-20 h-20 rounded-full bg-primary/5 items-center justify-center border border-primary/10 group-hover:border-primary/30 group-hover:bg-primary/10 transition-all duration-700">
-                        <span class="material-symbols-outlined text-primary animate-float-subtle" style="font-size: 30px;">school</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 </main>
 <!-- Footer -->
 <footer class="bg-surface-container-lowest w-full py-stack-lg border-t border-outline-variant/20">
