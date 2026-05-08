@@ -7,7 +7,7 @@
         <nav class="hidden md:flex gap-gutter items-center font-body-md text-body-md">
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
                 (click)="featuredProjects.scrollIntoView({ behavior: 'smooth' })">
-                Projects
+                Projetos
                 <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
         </nav>
@@ -57,7 +57,7 @@
                 class="group relative bg-surface-container-low rounded-DEFAULT overflow-hidden border border-transparent hover:border-primary/30 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:shadow-primary/10 transition-all duration-500 flex flex-col lg:flex-row">
                 <div class="lg:w-2/3 p-4 lg:p-8 flex items-center justify-center relative group/carousel">
                     <!-- Navigation Arrows -->
-                    <button (click)="prevImage('finance')" class="absolute left-6 z-20 p-2 rounded-full bg-surface/60 backdrop-blur-md text-primary opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-primary hover:text-on-primary">
+                    <button (click)="prevImage('finance')" class="absolute left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-surface/60 backdrop-blur-md text-primary opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-primary hover:text-on-primary">
                         <span class="material-symbols-outlined text-[24px]">chevron_left</span>
                     </button>
                     
@@ -67,7 +67,7 @@
                         </div>
                     </div>
 
-                    <button (click)="nextImage('finance')" class="absolute right-6 z-20 p-2 rounded-full bg-surface/60 backdrop-blur-md text-primary opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-primary hover:text-on-primary">
+                    <button (click)="nextImage('finance')" class="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-surface/60 backdrop-blur-md text-primary opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-primary hover:text-on-primary">
                         <span class="material-symbols-outlined text-[24px]">chevron_right</span>
                     </button>
 
@@ -115,7 +115,7 @@
                 class="group relative bg-surface-container-low rounded-DEFAULT overflow-hidden border border-transparent hover:border-primary/30 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] hover:shadow-primary/10 transition-all duration-500 flex flex-col lg:flex-row-reverse">
                 <div class="lg:w-2/3 p-4 lg:p-8 flex items-center justify-center relative group/carousel">
                     <!-- Navigation Arrows -->
-                    <button (click)="prevImage('biblioteca')" class="absolute left-6 z-20 p-2 rounded-full bg-surface/60 backdrop-blur-md text-primary opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-primary hover:text-on-primary">
+                    <button (click)="prevImage('biblioteca')" class="absolute left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-surface/60 backdrop-blur-md text-primary opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-primary hover:text-on-primary">
                         <span class="material-symbols-outlined text-[24px]">chevron_left</span>
                     </button>
                     
@@ -125,7 +125,7 @@
                         </div>
                     </div>
 
-                    <button (click)="nextImage('biblioteca')" class="absolute right-6 z-20 p-2 rounded-full bg-surface/60 backdrop-blur-md text-primary opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-primary hover:text-on-primary">
+                    <button (click)="nextImage('biblioteca')" class="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 flex items-center justify-center rounded-full bg-surface/60 backdrop-blur-md text-primary opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-primary hover:text-on-primary">
                         <span class="material-symbols-outlined text-[24px]">chevron_right</span>
                     </button>
 
