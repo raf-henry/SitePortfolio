@@ -5,7 +5,7 @@
             class="font-headline-md text-headline-md font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-primary-fixed-dim animate-gradient-pan tracking-tighter">
             raf_henry
         </div>
-        <nav class="hidden md:flex gap-gutter items-center font-body-md text-body-md">
+        <nav class="flex gap-4 md:gap-gutter items-center font-body-md text-sm md:text-body-md">
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
                 (click)="education.scrollIntoView({ behavior: 'smooth' })">
                 Formação
@@ -23,9 +23,6 @@
             class="hidden md:block bg-primary-container text-on-primary font-label-md text-label-md px-6 py-2 rounded-DEFAULT transition-all duration-300 hover:scale-105 glow-effect">
             Resume
         </button>
-        <button class="md:hidden text-on-surface-variant">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
     </div>
 </header>
 <main class="flex-grow pt-24 pb-stack-xl">
@@ -35,8 +32,8 @@
         <div class="max-w-3xl relative z-10">
             <p class="font-label-md text-label-md text-primary mb-stack-sm uppercase tracking-widest">Desenvolvedor
                 Full-Stack</p>
-            <h1 class="font-headline-xl text-headline-xl mb-stack-md text-on-surface">
-                Construindo infraestrutura <br />
+            <h1 class="font-headline-xl text-headline-lg md:text-headline-xl mb-stack-md text-on-surface leading-tight">
+                Construindo infraestrutura <br class="hidden sm:block" />
                 <span
                     class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-primary-fixed-dim animate-gradient-pan">digital
                     robusta e escalável.</span>
@@ -60,7 +57,7 @@
     <!-- Education Section -->
     <section #education class="max-w-container-max mx-auto px-margin py-stack-xl">
         <div class="mb-stack-lg flex justify-center items-center border-b border-outline-variant/20 pb-4">
-            <h2 class="font-headline-lg text-headline-lg text-on-surface text-center">Formação</h2>
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">Formação</h2>
         </div>
         <div class="flex justify-center">
             <div class="w-full max-w-4xl group relative bg-surface-container-low p-10 lg:p-14 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] overflow-hidden">
@@ -75,7 +72,7 @@
                                 3º semestre • Conclusão prevista para 12/2027
                             </p>
                         </div>
-                        <h3 class="font-headline-lg text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors duration-500 leading-tight">
+                        <h3 class="font-headline-lg text-headline-md md:text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors duration-500 leading-tight">
                             Análise e Desenvolvimento de Sistemas
                         </h3>
                         <div class="flex items-center gap-3 text-on-surface-variant">
@@ -96,7 +93,7 @@
     <!-- Featured Projects -->
     <section #featuredProjects class="max-w-container-max mx-auto px-margin py-stack-xl">
         <div class="mb-stack-lg flex justify-center items-center border-b border-outline-variant/20 pb-4">
-            <h2 class="font-headline-lg text-headline-lg text-on-surface text-center">Projetos em Andamento</h2>
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">Projetos em Andamento</h2>
         </div>
         <div class="flex flex-col gap-stack-lg">
             <!-- Project Card 1: FinanceSys -->
@@ -105,25 +102,25 @@
                 <div class="lg:w-2/3 p-4 lg:p-8 flex items-center justify-center relative group/carousel">
                     <!-- Navigation Arrows -->
                     <button (click)="prevImage('finance')"
-                        class="absolute left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 flex items-center justify-center rounded-full bg-surface/60 backdrop-blur-md text-primary opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-primary hover:text-on-primary">
-                        <span class="material-symbols-outlined text-[24px]">chevron_left</span>
+                        class="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 z-20 w-8 h-8 lg:w-11 lg:h-11 flex items-center justify-center rounded-full bg-surface/60 backdrop-blur-md text-primary opacity-100 lg:opacity-0 lg:group-hover/carousel:opacity-100 transition-all hover:bg-primary hover:text-on-primary">
+                        <span class="material-symbols-outlined text-[20px] lg:text-[24px]">chevron_left</span>
                     </button>
 
                     <div class="w-full overflow-hidden rounded-lg shadow-2xl">
                         <div class="flex transition-transform duration-700 cubic-bezier(0.4, 0, 0.2, 1)"
                             [style.transform]="'translateX(-' + (financeSysIndex() * 100) + '%)'">
                             <img *ngFor="let img of financeSysImages" [src]="img" alt="FinanceSys Preview"
-                                class="w-full h-auto flex-shrink-0 opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+                                class="min-w-full h-auto object-cover flex-shrink-0 opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
                         </div>
                     </div>
 
                     <button (click)="nextImage('finance')"
-                        class="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 flex items-center justify-center rounded-full bg-surface/60 backdrop-blur-md text-primary opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-primary hover:text-on-primary">
-                        <span class="material-symbols-outlined text-[24px]">chevron_right</span>
+                        class="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 z-20 w-8 h-8 lg:w-11 lg:h-11 flex items-center justify-center rounded-full bg-surface/60 backdrop-blur-md text-primary opacity-100 lg:opacity-0 lg:group-hover/carousel:opacity-100 transition-all hover:bg-primary hover:text-on-primary">
+                        <span class="material-symbols-outlined text-[20px] lg:text-[24px]">chevron_right</span>
                     </button>
 
                     <!-- Indicators -->
-                    <div class="absolute bottom-10 flex gap-2 z-20">
+                    <div class="absolute bottom-4 lg:bottom-10 flex gap-2 z-20">
                         <div *ngFor="let img of financeSysImages; let i = index"
                             class="w-1.5 h-1.5 rounded-full transition-all duration-500"
                             [class]="i === financeSysIndex() ? 'bg-primary w-6' : 'bg-primary/20'"></div>
@@ -153,7 +150,7 @@
                         </span>
                     </div>
                     <h3
-                        class="font-headline-lg text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors">
+                        class="font-headline-lg text-headline-md md:text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors">
                         FinanceSys</h3>
                     <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
                         Sistema inteligente de gestão financeira com integração à API Google Gemini para leitura
@@ -174,25 +171,25 @@
                 <div class="lg:w-2/3 p-4 lg:p-8 flex items-center justify-center relative group/carousel">
                     <!-- Navigation Arrows -->
                     <button (click)="prevImage('biblioteca')"
-                        class="absolute left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 flex items-center justify-center rounded-full bg-surface/60 backdrop-blur-md text-primary opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-primary hover:text-on-primary">
-                        <span class="material-symbols-outlined text-[24px]">chevron_left</span>
+                        class="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 z-20 w-8 h-8 lg:w-11 lg:h-11 flex items-center justify-center rounded-full bg-surface/60 backdrop-blur-md text-primary opacity-100 lg:opacity-0 lg:group-hover/carousel:opacity-100 transition-all hover:bg-primary hover:text-on-primary">
+                        <span class="material-symbols-outlined text-[20px] lg:text-[24px]">chevron_left</span>
                     </button>
 
                     <div class="w-full overflow-hidden rounded-lg shadow-2xl">
                         <div class="flex transition-transform duration-700 cubic-bezier(0.4, 0, 0.2, 1)"
                             [style.transform]="'translateX(-' + (bibliotecaSystemIndex() * 100) + '%)'">
                             <img *ngFor="let img of bibliotecaSystemImages" [src]="img" alt="BibliotecaSystem Preview"
-                                class="w-full h-auto flex-shrink-0 opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+                                class="min-w-full h-auto object-cover flex-shrink-0 opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
                         </div>
                     </div>
 
                     <button (click)="nextImage('biblioteca')"
-                        class="absolute right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 flex items-center justify-center rounded-full bg-surface/60 backdrop-blur-md text-primary opacity-0 group-hover/carousel:opacity-100 transition-all hover:bg-primary hover:text-on-primary">
-                        <span class="material-symbols-outlined text-[24px]">chevron_right</span>
+                        class="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 z-20 w-8 h-8 lg:w-11 lg:h-11 flex items-center justify-center rounded-full bg-surface/60 backdrop-blur-md text-primary opacity-100 lg:opacity-0 lg:group-hover/carousel:opacity-100 transition-all hover:bg-primary hover:text-on-primary">
+                        <span class="material-symbols-outlined text-[20px] lg:text-[24px]">chevron_right</span>
                     </button>
 
                     <!-- Indicators -->
-                    <div class="absolute bottom-10 flex gap-2 z-20">
+                    <div class="absolute bottom-4 lg:bottom-10 flex gap-2 z-20">
                         <div *ngFor="let img of bibliotecaSystemImages; let i = index"
                             class="w-1.5 h-1.5 rounded-full transition-all duration-500"
                             [class]="i === bibliotecaSystemIndex() ? 'bg-primary w-6' : 'bg-primary/20'"></div>
@@ -222,7 +219,7 @@
                         </span>
                     </div>
                     <h3
-                        class="font-headline-lg text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors">
+                        class="font-headline-lg text-headline-md md:text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors">
                         BibliotecaSystem</h3>
                     <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
                         Solução moderna para gestão de bibliotecas com estética Glassmorphism, controle de inventário e
