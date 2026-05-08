@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --color-secondary-fixed: #c4e7ff;
+  --color-primary-fixed: #a2eeff;
+  --color-surface-container-highest: #353436;
+  --color-primary-fixed-dim: #2fd9f4;
+  --color-primary: #8aebff;
+  --color-error-container: #93000a;
+  --color-on-surface: #e5e2e3;
+  --color-on-secondary: #00354a;
+  --color-surface-bright: #3a393a;
+  --color-surface-container-lowest: #0e0e0f;
+  --color-tertiary-fixed: #68fcbf;
+  --color-on-primary-fixed-variant: #004e5a;
+  --color-on-tertiary-container: #005a3e;
+  --color-inverse-primary: #006877;
+  --color-surface-variant: #353436;
+  --color-secondary: #7bd0ff;
+  --color-background: #131314;
+  --color-on-tertiary-fixed-variant: #005137;
+  --color-secondary-fixed-dim: #7bd0ff;
+  --color-on-tertiary: #003825;
+  --color-inverse-surface: #e5e2e3;
+  --color-on-secondary-container: #00374d;
+  --color-surface-container-low: #1c1b1c;
+  --color-on-background: #e5e2e3;
+  --color-surface: #131314;
+  --color-on-tertiary-fixed: #002114;
+  --color-inverse-on-surface: #313031;
+  --color-outline-variant: #3c494c;
+  --color-on-secondary-fixed: #001e2c;
+  --color-on-primary-container: #005763;
+  --color-surface-dim: #131314;
+  --color-on-primary-fixed: #001f25;
+  --color-secondary-container: #00a6e0;
+  --color-on-error-container: #ffdad6;
+  --color-on-surface-variant: #bbc9cd;
+  --color-on-primary: #00363e;
+  --color-surface-container: #201f20;
+  --color-on-error: #690005;
+  --color-tertiary: #61f6b9;
+  --color-tertiary-fixed-dim: #45dfa4;
+  --color-surface-container-high: #2a2a2b;
+  --color-tertiary-container: #3dd99e;
+  --color-on-secondary-fixed-variant: #004c69;
+  --color-primary-container: #22d3ee;
+  --color-outline: #859397;
+  --color-surface-tint: #2fd9f4;
+  --color-error: #ffb4ab;
+
+  --radius-DEFAULT: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  --spacing-stack-xl: 8rem;
+  --spacing-container-max: 1200px;
+  --spacing-margin: 1.5rem;
+  --spacing-stack-lg: 4rem;
+  --spacing-gutter: 2rem;
+  --spacing-stack-sm: 1rem;
+  --spacing-stack-md: 2rem;
+
+  --font-body-lg: Geist;
+  --font-body-md: Geist;
+  --font-headline-lg: Geist;
+  --font-headline-md: Geist;
+  --font-headline-xl: Geist;
+  --font-label-md: "JetBrains Mono";
+  --font-label-sm: "JetBrains Mono";
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 1.6;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-md: 16px;
+  --text-body-md--line-height: 1.6;
+  --text-body-md--font-weight: 400;
+
+  --text-headline-lg: 40px;
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 600;
+
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 1.4;
+  --text-headline-md--font-weight: 600;
+
+  --text-headline-xl: 64px;
+  --text-headline-xl--line-height: 1.1;
+  --text-headline-xl--letter-spacing: -0.04em;
+  --text-headline-xl--font-weight: 700;
+
+  --text-label-md: 14px;
+  --text-label-md--line-height: 1.2;
+  --text-label-md--letter-spacing: 0.05em;
+  --text-label-md--font-weight: 500;
+
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 1.2;
+  --text-label-sm--letter-spacing: 0.1em;
+  --text-label-sm--font-weight: 400;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-on-background);
+}
+.glow-effect:hover {
+    box-shadow: 0 0 32px rgba(34, 211, 238, 0.2);
+}
