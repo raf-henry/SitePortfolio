@@ -26,8 +26,9 @@ yarn-error.log
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-!.vscode/mcp.json
+.vscode/mcp.json
 .history/*
+
 
 # Miscellaneous
 /.angular/cache
@@ -38,6 +39,8 @@ yarn-error.log
 testem.log
 /typings
 __screenshots__/
+stitch_visual_project_portfolio/
+
 
 # System files
 .DS_Store
