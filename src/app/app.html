@@ -1,37 +1,36 @@
 <!-- TopNavBar -->
 <header class="bg-surface/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/10">
     <div class="flex justify-between items-center h-16 px-margin max-w-container-max mx-auto">
-        <div
-            class="font-headline-md text-headline-md font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-primary-fixed-dim animate-gradient-pan tracking-tighter">
+        <div class="font-headline-md text-headline-md font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-primary-fixed-dim animate-gradient-pan tracking-tighter z-50">
             raf_henry
         </div>
-        <nav class="flex gap-4 md:gap-gutter items-center font-body-md text-sm md:text-body-md">
+        
+        <!-- Navegação Desktop -->
+        <nav class="hidden md:flex gap-gutter items-center font-body-md text-body-md">
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
                 (click)="home.scrollIntoView({ behavior: 'smooth' })">
                 Início
-                <span
-                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
                 (click)="skills.scrollIntoView({ behavior: 'smooth' })">
                 Habilidades
-                <span
-                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
                 (click)="education.scrollIntoView({ behavior: 'smooth' })">
                 Formação
-                <span
-                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
                 (click)="featuredProjects.scrollIntoView({ behavior: 'smooth' })">
                 Projetos
-                <span
-                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
         </nav>
-        <div class="flex items-center gap-4">
+        
+        <div class="flex items-center gap-2 md:gap-4 z-50">
+            <!-- Botão de Tema -->
             <button (click)="toggleTheme()" 
                 class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
                 [title]="isLightMode() ? 'Mudar para tema escuro' : 'Mudar para tema claro'">
@@ -39,32 +38,63 @@
                     {{ isLightMode() ? 'dark_mode' : 'light_mode' }}
                 </span>
             </button>
+            
+            <!-- Redes Sociais Desktop -->
             <div class="hidden md:flex items-center gap-2">
-                <!-- Email -->
-                <a href="mailto:henryrbco@gmail.com" 
-                    class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
-                    title="E-mail">
+                <a href="mailto:henryrbco@gmail.com" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer" title="E-mail">
                     <span class="material-symbols-outlined text-[20px]">mail</span>
                 </a>
-                <!-- GitHub -->
-                <a href="https://github.com/raf-henry" target="_blank" rel="noopener"
-                    class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
-                    title="GitHub">
+                <a href="https://github.com/raf-henry" target="_blank" rel="noopener" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer" title="GitHub">
                     <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/github/black' : 'https://cdn.simpleicons.org/github/white'" class="w-5 h-5" alt="GitHub" />
                 </a>
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/henryrafaelbco/" target="_blank" rel="noopener"
-                    class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
-                    title="LinkedIn">
+                <a href="https://www.linkedin.com/in/henryrafaelbco/" target="_blank" rel="noopener" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer" title="LinkedIn">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-5 h-5" alt="LinkedIn" />
                 </a>
-                <!-- WhatsApp -->
-                <a href="https://wa.me/5562984268923" target="_blank" rel="noopener"
-                    class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
-                    title="WhatsApp">
+                <a href="https://wa.me/5562984268923" target="_blank" rel="noopener" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer" title="WhatsApp">
                     <img src="https://cdn.simpleicons.org/whatsapp/25D366" class="w-5 h-5" alt="WhatsApp" />
                 </a>
             </div>
+
+            <!-- Botão Menu Mobile -->
+            <button class="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer" (click)="toggleMobileMenu()">
+                <span class="material-symbols-outlined text-[24px]">{{ isMobileMenuOpen() ? 'close' : 'menu' }}</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navegação Mobile (Overlay) -->
+    <div *ngIf="isMobileMenuOpen()" class="md:hidden absolute top-16 left-0 w-full bg-surface/95 backdrop-blur-3xl border-b border-outline-variant/10 flex flex-col py-6 px-margin gap-6 shadow-2xl animate-fade-in-up" style="animation-duration: 0.3s;">
+        <a class="text-on-surface text-lg font-medium hover:text-primary transition-colors cursor-pointer flex items-center gap-3"
+            (click)="home.scrollIntoView({ behavior: 'smooth' }); toggleMobileMenu()">
+            <span class="material-symbols-outlined text-primary/80">home</span> Início
+        </a>
+        <a class="text-on-surface text-lg font-medium hover:text-primary transition-colors cursor-pointer flex items-center gap-3"
+            (click)="skills.scrollIntoView({ behavior: 'smooth' }); toggleMobileMenu()">
+            <span class="material-symbols-outlined text-primary/80">terminal</span> Habilidades
+        </a>
+        <a class="text-on-surface text-lg font-medium hover:text-primary transition-colors cursor-pointer flex items-center gap-3"
+            (click)="education.scrollIntoView({ behavior: 'smooth' }); toggleMobileMenu()">
+            <span class="material-symbols-outlined text-primary/80">school</span> Formação
+        </a>
+        <a class="text-on-surface text-lg font-medium hover:text-primary transition-colors cursor-pointer flex items-center gap-3"
+            (click)="featuredProjects.scrollIntoView({ behavior: 'smooth' }); toggleMobileMenu()">
+            <span class="material-symbols-outlined text-primary/80">work</span> Projetos
+        </a>
+        
+        <!-- Redes Sociais Mobile -->
+        <div class="flex items-center justify-center gap-4 mt-4 pt-6 border-t border-outline-variant/20">
+            <a href="mailto:henryrbco@gmail.com" class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-all" title="E-mail">
+                <span class="material-symbols-outlined text-[24px]">mail</span>
+            </a>
+            <a href="https://github.com/raf-henry" target="_blank" rel="noopener" class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-all" title="GitHub">
+                <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/github/black' : 'https://cdn.simpleicons.org/github/white'" class="w-6 h-6" alt="GitHub" />
+            </a>
+            <a href="https://www.linkedin.com/in/henryrafaelbco/" target="_blank" rel="noopener" class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-all" title="LinkedIn">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-6 h-6" alt="LinkedIn" />
+            </a>
+            <a href="https://wa.me/5562984268923" target="_blank" rel="noopener" class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-all" title="WhatsApp">
+                <img src="https://cdn.simpleicons.org/whatsapp/25D366" class="w-6 h-6" alt="WhatsApp" />
+            </a>
         </div>
     </div>
 </header>

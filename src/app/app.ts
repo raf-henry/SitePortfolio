@@ -32,6 +32,12 @@ export class App {
     this.isLightMode.set(document.documentElement.classList.contains('light'));
   }
 
+  isMobileMenuOpen = signal(false);
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen.update(val => !val);
+  }
+
   toggleTheme() {
     this.isLightMode.update(val => !val);
     if (this.isLightMode()) {
