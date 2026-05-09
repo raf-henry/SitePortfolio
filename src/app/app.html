@@ -7,6 +7,18 @@
         </div>
         <nav class="flex gap-4 md:gap-gutter items-center font-body-md text-sm md:text-body-md">
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
+                (click)="home.scrollIntoView({ behavior: 'smooth' })">
+                Início
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
+                (click)="skills.scrollIntoView({ behavior: 'smooth' })">
+                Habilidades
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
                 (click)="education.scrollIntoView({ behavior: 'smooth' })">
                 Formação
                 <span
@@ -19,7 +31,7 @@
                     class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
         </nav>
-        <button
+        <button (click)="contact.scrollIntoView({ behavior: 'smooth' })"
             class="hidden md:block bg-primary-container text-on-primary font-label-md text-label-md px-6 py-2 rounded-DEFAULT transition-all duration-300 hover:scale-105 glow-effect">
             Contato
         </button>
@@ -28,8 +40,9 @@
 <main class="flex-grow pt-24 pb-stack-xl">
     <!-- Hero Section -->
     <section
+        #home
         class="max-w-container-max mx-auto px-margin py-stack-xl min-h-[716px] flex flex-col justify-center relative">
-        <div class="max-w-3xl relative z-10">
+        <div class="max-w-3xl relative z-10"> 
             <p class="font-label-md text-label-md text-primary mb-stack-sm uppercase tracking-widest">Desenvolvedor
                 Full-Stack</p>
             <div class="presentation-content animate-fade-in-up">
@@ -40,7 +53,7 @@
                     Estudante de Análise e Desenvolvimento de Sistemas
                 </p>
                 <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-2xl">
-                    Atuo na criação de aplicações web completas, unindo o poder e a segurança do backend com <span class="tech-java font-bold text-[1.1em] drop-shadow-[0_0_12px_rgba(237,139,0,0.4)]">Java</span> e <span class="tech-springboot font-bold text-[1.1em] drop-shadow-[0_0_12px_rgba(109,179,63,0.4)]">Spring Boot</span> à interatividade do frontend com <span class="tech-tailwind font-bold text-[1.1em] drop-shadow-[0_0_12px_rgba(6,182,212,0.4)]">Tailwind</span> e <span class="tech-angular font-bold text-[1.1em] drop-shadow-[0_0_12px_rgba(221,0,49,0.4)]">Angular</span>. 
+                    Estudo a criação de aplicações web completas, o poder, a segurança do backend e a interatividade e design do frontend.
                 </p>
             </div>
             <div class="flex flex-wrap gap-4">
@@ -56,6 +69,50 @@
             class="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-[600px] pointer-events-none blur-[120px] rounded-full bg-gradient-to-tr from-primary/20 via-tertiary/10 to-transparent animate-blob-float">
         </div>
     </section>
+    <!-- Skills & Technologies Section -->
+    <section #skills class="max-w-container-max mx-auto px-margin py-stack-xl">
+        <div class="mb-stack-lg flex justify-center items-center border-b border-outline-variant/20 pb-4">
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">Habilidades & Tecnologias</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- Back-end Skills -->
+            <div class="bg-surface-container-low p-8 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] flex flex-col items-center">
+                <h3 class="font-headline-md text-headline-sm mb-6 text-on-surface text-center flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">dns</span>
+                    Back-end
+                </h3>
+                <div class="flex flex-wrap justify-center gap-4 w-full">
+                    <span class="tech-java font-bold text-[1.2em] drop-shadow-[0_0_12px_rgba(237,139,0,0.4)] bg-surface/50 py-3 px-6 rounded-md flex items-center gap-3 w-full justify-center transition-transform hover:scale-105 cursor-default">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-6 h-6" alt="Java" />
+                        Java
+                    </span>
+                    <span class="tech-springboot font-bold text-[1.2em] drop-shadow-[0_0_12px_rgba(109,179,63,0.4)] bg-surface/50 py-3 px-6 rounded-md flex items-center gap-3 w-full justify-center transition-transform hover:scale-105 cursor-default">
+                        <img src="https://cdn.simpleicons.org/springboot/6db33f" class="w-6 h-6" alt="Spring Boot" />
+                        Spring Boot
+                    </span>
+                </div>
+            </div>
+            
+            <!-- Front-end Skills -->
+            <div class="bg-surface-container-low p-8 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] flex flex-col items-center">
+                <h3 class="font-headline-md text-headline-sm mb-6 text-on-surface text-center flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary">web</span>
+                    Front-end
+                </h3>
+                <div class="flex flex-wrap justify-center gap-4 w-full">
+                    <span class="tech-angular font-bold text-[1.2em] drop-shadow-[0_0_12px_rgba(221,0,49,0.4)] bg-surface/50 py-3 px-6 rounded-md flex items-center gap-3 w-full justify-center transition-transform hover:scale-105 cursor-default">
+                        <img src="https://cdn.simpleicons.org/angular/dd0031" class="w-6 h-6" alt="Angular" />
+                        Angular
+                    </span>
+                    <span class="tech-tailwind font-bold text-[1.2em] drop-shadow-[0_0_12px_rgba(6,182,212,0.4)] bg-surface/50 py-3 px-6 rounded-md flex items-center gap-3 w-full justify-center transition-transform hover:scale-105 cursor-default">
+                        <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" class="w-6 h-6" alt="Tailwind" />
+                        Tailwind CSS
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Education Section -->
     <section #education class="max-w-container-max mx-auto px-margin py-stack-xl">
         <div class="mb-stack-lg flex justify-center items-center border-b border-outline-variant/20 pb-4">
@@ -231,6 +288,55 @@
                         <a href="https://github.com/raf-henry/Biblioteca" target="_blank" rel="noopener" class="text-primary font-label-md text-label-md flex items-center gap-2 group/link cursor-pointer">
                             Ver Projeto <span
                                 class="material-symbols-outlined text-[18px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section #contact class="max-w-container-max mx-auto px-margin py-stack-xl">
+        <div class="mb-stack-lg flex justify-center items-center border-b border-outline-variant/20 pb-4">
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">Contato</h2>
+        </div>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Email -->
+            <a href="mailto:henryrbco@gmail.com" class="group bg-surface-container-low p-10 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 flex flex-col items-center text-center gap-6 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)]">
+                <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-primary/10 transition-all duration-500">
+                    <span class="material-symbols-outlined text-primary text-[32px] group-hover:scale-110 transition-transform">mail</span>
+                </div>
+                <div>
+                    <p class="font-label-md text-primary uppercase tracking-[0.2em] text-xs mb-2">E-mail</p>
+                    <p class="font-body-lg text-on-surface break-all font-medium">henryrbco@gmail.com</p>
+                </div>
+            </a>
+            
+            <!-- Location -->
+            <div class="group bg-surface-container-low p-10 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 flex flex-col items-center text-center gap-6 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)]">
+                <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-primary/10 transition-all duration-500">
+                    <span class="material-symbols-outlined text-primary text-[32px] group-hover:scale-110 transition-transform">location_on</span>
+                </div>
+                <div>
+                    <p class="font-label-md text-primary uppercase tracking-[0.2em] text-xs mb-2">Localização</p>
+                    <p class="font-body-lg text-on-surface font-medium">Goiânia - GO</p>
+                </div>
+            </div>
+
+            <!-- Social -->
+            <div class="group bg-surface-container-low p-10 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 flex flex-col items-center text-center gap-6 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)]">
+                <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-primary/10 transition-all duration-500">
+                    <span class="material-symbols-outlined text-primary text-[32px] group-hover:scale-110 transition-transform">hub</span>
+                </div>
+                <div>
+                    <p class="font-label-md text-primary uppercase tracking-[0.2em] text-xs mb-4">Redes Sociais</p>
+                    <div class="flex gap-4 justify-center">
+                        <a href="https://github.com/raf-henry" target="_blank" rel="noopener" class="w-10 h-10 rounded-md bg-surface/50 border border-outline-variant/20 flex items-center justify-center hover:text-primary hover:border-primary/40 transition-all duration-300 group/icon">
+                           <img src="https://cdn.simpleicons.org/github/white" class="w-5 h-5 transition-all" alt="GitHub" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/henryrafaelbco/" target="_blank" rel="noopener" class="w-10 h-10 rounded-md bg-surface/50 border border-outline-variant/20 flex items-center justify-center hover:text-primary hover:border-primary/40 transition-all duration-300 group/icon">
+                           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-5 h-5" alt="LinkedIn" />
                         </a>
                     </div>
                 </div>
