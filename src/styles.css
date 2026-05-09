@@ -103,9 +103,43 @@
   --text-label-sm--font-weight: 400;
 }
 
+:root {
+  color-scheme: dark;
+}
+
+.light {
+  color-scheme: light;
+  --color-background: #ffffff;
+  --color-on-background: #131314;
+  --color-surface: #ffffff;
+  --color-on-surface: #131314;
+  --color-surface-container: #f0f2f5;
+  --color-surface-container-low: #f8fafc;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #e2e8f0;
+  --color-surface-container-highest: #cbd5e1;
+  --color-on-surface-variant: #475569;
+  --color-outline-variant: #e2e8f0;
+  --color-primary: #006877; /* Darker primary for light mode */
+  --color-primary-container: #004e5a;
+  --color-on-primary: #ffffff;
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-on-background);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light .tech-github {
+  background: linear-gradient(to right, #24292e, #444d56, #24292e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.light .glow-effect:hover {
+  box-shadow: 0 0 32px rgba(0, 104, 119, 0.15);
 }
 
 .glow-effect:hover {

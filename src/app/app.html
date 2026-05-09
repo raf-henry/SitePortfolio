@@ -31,10 +31,19 @@
                     class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
         </nav>
-        <button (click)="contact.scrollIntoView({ behavior: 'smooth' })"
-            class="hidden md:block bg-gradient-to-r from-primary-container via-primary to-primary-container bg-[length:200%_auto] animate-gradient-pan text-on-primary font-label-md text-label-md px-6 py-2 rounded-DEFAULT transition-all duration-300 hover:scale-105 glow-effect border-none cursor-pointer">
-            Contato
-        </button>
+        <div class="flex items-center gap-4">
+            <button (click)="toggleTheme()" 
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
+                [title]="isLightMode() ? 'Mudar para tema escuro' : 'Mudar para tema claro'">
+                <span class="material-symbols-outlined text-[24px]">
+                    {{ isLightMode() ? 'dark_mode' : 'light_mode' }}
+                </span>
+            </button>
+            <button (click)="contact.scrollIntoView({ behavior: 'smooth' })"
+                class="hidden md:block bg-gradient-to-r from-primary-container via-primary to-primary-container bg-[length:200%_auto] animate-gradient-pan text-on-primary font-label-md text-label-md px-6 py-2 rounded-DEFAULT transition-all duration-300 hover:scale-105 glow-effect border-none cursor-pointer">
+                Contato
+            </button>
+        </div>
     </div>
 </header>
 <main class="flex-grow pt-24 pb-stack-xl">
@@ -128,7 +137,7 @@
                         Git
                     </span>
                     <span class="tech-github font-bold text-[1.2em] drop-shadow-[0_0_12px_rgba(255,255,255,0.2)] bg-surface/50 py-3 px-6 rounded-md flex items-center gap-3 w-full justify-center transition-transform hover:scale-105 cursor-default">
-                        <img src="https://cdn.simpleicons.org/github/white" class="w-6 h-6" alt="GitHub" />
+                        <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/github/black' : 'https://cdn.simpleicons.org/github/white'" class="w-6 h-6" alt="GitHub" />
                         GitHub
                     </span>
                 </div>
@@ -339,11 +348,11 @@
             <!-- GitHub -->
             <a href="https://github.com/raf-henry" target="_blank" rel="noopener" class="group bg-surface-container-low p-10 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 flex flex-col items-center text-center gap-6 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] min-w-[260px] flex-1 max-w-[300px]">
                 <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-primary/10 transition-all duration-500">
-                    <img src="https://cdn.simpleicons.org/github/white" class="w-8 h-8 group-hover:scale-110 transition-transform" alt="GitHub" />
+                    <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/github/black' : 'https://cdn.simpleicons.org/github/white'" class="w-8 h-8 group-hover:scale-110 transition-transform" alt="GitHub" />
                 </div>
                 <div>
                     <p class="font-label-md text-primary uppercase tracking-[0.2em] text-xs mb-2">GitHub</p>
-                    <p class="font-body-lg text-on-surface font-medium">raf-henry</p>
+                    <p class="font-body-lg text-on-surface font-medium">Veja meus Projetos</p>
                 </div>
             </a>
 
@@ -354,7 +363,7 @@
                 </div>
                 <div>
                     <p class="font-label-md text-primary uppercase tracking-[0.2em] text-xs mb-2">LinkedIn</p>
-                    <p class="font-body-lg text-on-surface font-medium">Henry Rafael</p>
+                    <p class="font-body-lg text-on-surface font-medium">Conecte-se comigo</p>
                 </div>
             </a>
 
@@ -365,7 +374,7 @@
                 </div>
                 <div>
                     <p class="font-label-md text-primary uppercase tracking-[0.2em] text-xs mb-2">WhatsApp</p>
-                    <p class="font-body-lg text-on-surface font-medium">(62) 98426-8923</p>
+                    <p class="font-body-lg text-on-surface font-medium">Contate-me</p>
                 </div>
             </a>
 
