@@ -168,6 +168,24 @@ body {
   animation: gradient-pan 6s ease infinite;
 }
 
+.tech-git {
+  background: linear-gradient(to right, #F05032, #FF7D5E, #F05032);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 6s ease infinite;
+}
+
+.tech-github {
+  background: linear-gradient(to right, #FFFFFF, #CCCCCC, #FFFFFF);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-pan 6s ease infinite;
+}
+
 @keyframes blob-float {
 
   0%,
