@@ -39,10 +39,32 @@
                     {{ isLightMode() ? 'dark_mode' : 'light_mode' }}
                 </span>
             </button>
-            <button (click)="contact.scrollIntoView({ behavior: 'smooth' })"
-                class="hidden md:block bg-gradient-to-r from-primary-container via-primary to-primary-container bg-[length:200%_auto] animate-gradient-pan text-on-primary font-label-md text-label-md px-6 py-2 rounded-DEFAULT transition-all duration-300 hover:scale-105 glow-effect border-none cursor-pointer">
-                Contato
-            </button>
+            <div class="hidden md:flex items-center gap-2">
+                <!-- Email -->
+                <a href="mailto:henryrbco@gmail.com" 
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
+                    title="E-mail">
+                    <span class="material-symbols-outlined text-[20px]">mail</span>
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/raf-henry" target="_blank" rel="noopener"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
+                    title="GitHub">
+                    <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/github/black' : 'https://cdn.simpleicons.org/github/white'" class="w-5 h-5" alt="GitHub" />
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/henryrafaelbco/" target="_blank" rel="noopener"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
+                    title="LinkedIn">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-5 h-5" alt="LinkedIn" />
+                </a>
+                <!-- WhatsApp -->
+                <a href="https://wa.me/5562984268923" target="_blank" rel="noopener"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
+                    title="WhatsApp">
+                    <img src="https://cdn.simpleicons.org/whatsapp/25D366" class="w-5 h-5" alt="WhatsApp" />
+                </a>
+            </div>
         </div>
     </div>
 </header>
