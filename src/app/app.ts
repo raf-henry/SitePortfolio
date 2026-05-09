@@ -28,14 +28,8 @@ export class App {
   isLightMode = signal(false);
 
   constructor() {
-    // Inicializar o tema a partir do localStorage ou preferência do sistema
-    const savedTheme = localStorage.getItem('theme');
-    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    
-    if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
-      this.isLightMode.set(true);
-      document.documentElement.classList.add('light');
-    }
+    // Sincronizar o estado do sinal com a classe aplicada pelo script no index.html
+    this.isLightMode.set(document.documentElement.classList.contains('light'));
   }
 
   toggleTheme() {

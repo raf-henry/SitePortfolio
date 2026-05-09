@@ -1,6 +1,19 @@
 <!doctype html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
+        document.documentElement.classList.add('light');
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+      }
+    })();
+  </script>
   <meta charset="utf-8">
   <title>raf_henryPortfolio</title>
   <base href="/">
