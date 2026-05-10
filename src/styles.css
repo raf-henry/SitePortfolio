@@ -296,12 +296,28 @@ body {
   animation: fade-in-down 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Hide scrollbars globally */
+/* Estilização discreta da barra de rolagem */
 * {
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-outline-variant) transparent;
 }
 
+/* Chrome, Edge e Safari */
 *::-webkit-scrollbar {
-  display: none !important;
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-outline-variant);
+  border-radius: 20px;
+  border: transparent;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primary);
 }
