@@ -140,61 +140,98 @@
         <div class="mb-stack-lg flex justify-center items-center border-b border-primary/20 pb-4">
             <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">Habilidades & Tecnologias</h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-container-max mx-auto">
-            <!-- Back-end Skills -->
-            <div class="project-card group bg-surface-container-low p-8 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] flex flex-col items-center">
-                <h3 class="font-headline-md text-headline-sm mb-6 text-on-surface group-hover:text-primary transition-colors duration-500 text-center flex items-center gap-2">
-                    <span class="material-symbols-outlined text-primary">dns</span>
-                    Back-end
-                </h3>
-                <div class="flex flex-wrap justify-center gap-4 w-full">
-                    <span class="tech-java font-bold text-[1.2em] drop-shadow-[0_0_12px_rgba(237,139,0,0.4)] bg-surface/50 py-3 px-6 rounded-md flex items-center gap-3 w-full justify-center transition-transform hover:scale-105 cursor-default">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-6 h-6" alt="Java" />
-                        Java
-                    </span>
-                    <span class="tech-springboot font-bold text-[1.2em] drop-shadow-[0_0_12px_rgba(109,179,63,0.4)] bg-surface/50 py-3 px-6 rounded-md flex items-center gap-3 w-full justify-center transition-transform hover:scale-105 cursor-default">
-                        <img src="https://cdn.simpleicons.org/springboot/6db33f" class="w-6 h-6" alt="Spring Boot" />
-                        Spring Boot
-                    </span>
-                </div>
+        <div class="roulette-wrapper overflow-hidden relative w-full py-4" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+            <!-- Row 1 (Right) -->
+            <div class="roulette-track flex gap-4 mb-6">
+                <!-- List 1 original -->
+                <ng-container *ngTemplateOutlet="row1Cards"></ng-container>
+                <!-- List 1 clone -->
+                <ng-container *ngTemplateOutlet="row1Cards"></ng-container>
             </div>
             
-            <!-- Front-end Skills -->
-            <div class="project-card group bg-surface-container-low p-8 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] flex flex-col items-center">
-                <h3 class="font-headline-md text-headline-sm mb-6 text-on-surface group-hover:text-primary transition-colors duration-500 text-center flex items-center gap-2">
-                    <span class="material-symbols-outlined text-primary">web</span>
-                    Front-end
-                </h3>
-                <div class="flex flex-wrap justify-center gap-4 w-full">
-                    <span class="tech-angular font-bold text-[1.2em] drop-shadow-[0_0_12px_rgba(221,0,49,0.4)] bg-surface/50 py-3 px-6 rounded-md flex items-center gap-3 w-full justify-center transition-transform hover:scale-105 cursor-default">
-                        <img src="https://cdn.simpleicons.org/angular/dd0031" class="w-6 h-6" alt="Angular" />
-                        Angular
-                    </span>
-                    <span class="tech-tailwind font-bold text-[1.2em] drop-shadow-[0_0_12px_rgba(6,182,212,0.4)] bg-surface/50 py-3 px-6 rounded-md flex items-center gap-3 w-full justify-center transition-transform hover:scale-105 cursor-default">
-                        <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" class="w-6 h-6" alt="Tailwind" />
-                        Tailwind CSS
-                    </span>
-                </div>
-            </div>
-
-            <!-- Versioning Skills -->
-            <div class="project-card group bg-surface-container-low p-8 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] flex flex-col items-center">
-                <h3 class="font-headline-md text-headline-sm mb-6 text-on-surface group-hover:text-primary transition-colors duration-500 text-center flex items-center gap-2">
-                    <span class="material-symbols-outlined text-primary">account_tree</span>
-                    Versionamento
-                </h3>
-                <div class="flex flex-wrap justify-center gap-4 w-full">
-                    <span class="tech-git font-bold text-[1.2em] drop-shadow-[0_0_12px_rgba(240,80,50,0.4)] bg-surface/50 py-3 px-6 rounded-md flex items-center gap-3 w-full justify-center transition-transform hover:scale-105 cursor-default">
-                        <img src="https://cdn.simpleicons.org/git/F05032" class="w-6 h-6" alt="Git" />
-                        Git
-                    </span>
-                    <span class="tech-github font-bold text-[1.2em] drop-shadow-[0_0_12px_rgba(255,255,255,0.2)] bg-surface/50 py-3 px-6 rounded-md flex items-center gap-3 w-full justify-center transition-transform hover:scale-105 cursor-default">
-                        <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/github/black' : 'https://cdn.simpleicons.org/github/white'" class="w-6 h-6" alt="GitHub" />
-                        GitHub
-                    </span>
-                </div>
+            <!-- Row 2 (Left) -->
+            <div class="roulette-track reverse flex gap-4">
+                <!-- List 2 original -->
+                <ng-container *ngTemplateOutlet="row2Cards"></ng-container>
+                <!-- List 2 clone -->
+                <ng-container *ngTemplateOutlet="row2Cards"></ng-container>
             </div>
         </div>
+
+        <!-- Templates for cards -->
+        <ng-template #row1Cards>
+            <div class="flex gap-4">
+                <div class="tech-card group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                    <span class="group-hover:text-[#ED8B00]">Java</span>
+                </div>
+                <div class="tech-card group">
+                    <img src="https://cdn.simpleicons.org/springboot/6db33f" alt="Spring Boot">
+                    <span class="group-hover:text-[#6db33f]">Spring Boot</span>
+                </div>
+                <div class="tech-card group">
+                    <img src="https://cdn.simpleicons.org/apachemaven/C71A36" alt="Maven">
+                    <span class="group-hover:text-[#C71A36]">Maven</span>
+                </div>
+                <div class="tech-card group">
+                    <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/jsonwebtokens/000000' : 'https://cdn.simpleicons.org/jsonwebtokens/ffffff'" alt="JWT">
+                    <span class="group-hover:text-primary">JWT</span>
+                </div>
+                <div class="tech-card group">
+                    <img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="PostgreSQL">
+                    <span class="group-hover:text-[#4169E1]">PostgreSQL</span>
+                </div>
+                <div class="tech-card group">
+                    <img src="https://cdn.simpleicons.org/git/F05032" alt="Git">
+                    <span class="group-hover:text-[#F05032]">Git</span>
+                </div>
+                <div class="tech-card group">
+                    <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/github/black' : 'https://cdn.simpleicons.org/github/white'" alt="GitHub">
+                    <span class="group-hover:text-primary">GitHub</span>
+                </div>
+                <div class="tech-card group">
+                    <img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker">
+                    <span class="group-hover:text-[#2496ED]">Docker</span>
+                </div>
+                <div class="tech-card group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+                    <span class="group-hover:text-[#FCC624]">Linux</span>
+                </div>
+                <div class="tech-card group">
+                    <img src="https://cdn.simpleicons.org/postman/FF6C37" alt="Postman">
+                    <span class="group-hover:text-[#FF6C37]">Postman</span>
+                </div>
+            </div>
+        </ng-template>
+
+        <ng-template #row2Cards>
+            <div class="flex gap-4">
+                <div class="tech-card group">
+                    <img src="https://cdn.simpleicons.org/angular/dd0031" alt="Angular">
+                    <span class="group-hover:text-[#dd0031]">Angular</span>
+                </div>
+                <div class="tech-card group">
+                    <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="TailwindCSS">
+                    <span class="group-hover:text-[#06B6D4]">TailwindCSS</span>
+                </div>
+                <div class="tech-card group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                    <span class="group-hover:text-[#F7DF1E]">JavaScript</span>
+                </div>
+                <div class="tech-card group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                    <span class="group-hover:text-[#E34F26]">HTML</span>
+                </div>
+                <div class="tech-card group">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+                    <span class="group-hover:text-[#3178C6]">TypeScript</span>
+                </div>
+                <div class="tech-card group">
+                    <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/vercel/black' : 'https://cdn.simpleicons.org/vercel/white'" alt="Vercel">
+                    <span class="group-hover:text-primary">Vercel</span>
+                </div>
+            </div>
+        </ng-template>
     </section>
 
     <!-- Education Section -->
@@ -212,7 +249,7 @@
                         <div class="flex items-center gap-3 mb-4">
                             <span class="w-10 h-0.5 bg-primary/40"></span>
                             <p class="text-primary font-label-md uppercase tracking-[0.2em] text-xs">
-                                3º semestre • Conclusão prevista para 12/2027
+                                3º período • Conclusão prevista para 12/2027
                             </p>
                         </div>
                         <h3 class="font-headline-lg text-headline-md md:text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors duration-500 leading-tight">

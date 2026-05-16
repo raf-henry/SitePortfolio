@@ -321,3 +321,40 @@ body {
 *::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-primary);
 }
+
+/* Infinite Scrolling Roulette */
+.tech-card {
+  @apply flex flex-col items-center justify-center gap-2 p-3 md:gap-3 md:p-4 rounded-[12px] bg-surface-container-low border border-primary/10 transition-all duration-300 w-[80px] h-[80px] md:w-[100px] md:h-[100px] shrink-0;
+}
+.tech-card:hover {
+  @apply scale-105 border-primary/50 shadow-[0_4px_20px_-4px_rgba(34,211,238,0.3)];
+}
+.tech-card img {
+  @apply w-[28px] h-[28px] md:w-[36px] md:h-[36px] object-contain transition-transform duration-300;
+}
+.tech-card:hover img {
+  @apply scale-110;
+}
+.tech-card span {
+  @apply font-label-sm text-[10px] md:text-[11px] text-on-surface uppercase tracking-wider text-center font-bold transition-colors duration-300;
+}
+
+.roulette-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-right 25s linear infinite;
+  will-change: transform; /* Otimização para Mobile/GPU */
+}
+.roulette-track.reverse {
+  animation: scroll-left 25s linear infinite;
+}
+
+@keyframes scroll-right {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-50% - 0.5rem)); }
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(calc(-50% - 0.5rem)); }
+  to   { transform: translateX(0); }
+}
