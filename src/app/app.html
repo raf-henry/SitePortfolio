@@ -1,9 +1,7 @@
 <!-- TopNavBar -->
 <header class="bg-surface/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/10">
     <div class="flex justify-between items-center h-16 px-margin max-w-container-max mx-auto">
-        <div class="font-headline-md text-headline-md font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-primary-fixed-dim animate-gradient-pan tracking-tighter z-50">
-            raf_henry
-        </div>
+        <img src="images/home.png" alt="raf_henry" class="h-10 w-auto z-50 cursor-pointer" (click)="home.scrollIntoView({ behavior: 'smooth' })">
         
         <!-- Navegação Desktop -->
         <nav class="hidden md:flex gap-gutter items-center font-body-md text-body-md">
