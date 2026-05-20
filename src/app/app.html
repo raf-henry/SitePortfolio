@@ -1,69 +1,88 @@
 <!-- TopNavBar -->
 <header class="bg-surface/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-outline-variant/10">
     <div class="flex justify-between items-center h-16 px-margin max-w-container-max mx-auto">
-        <div class="font-headline-md text-headline-md font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-primary-fixed-dim animate-gradient-pan tracking-tighter z-50 cursor-pointer" (click)="home.scrollIntoView({ behavior: 'smooth' })">
+        <div class="font-headline-md text-headline-md font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-primary-fixed-dim animate-gradient-pan tracking-tighter z-50 cursor-pointer"
+            (click)="home.scrollIntoView({ behavior: 'smooth' })">
             henryraf
         </div>
-        
+
         <!-- Navegação Desktop -->
         <nav class="hidden md:flex gap-gutter items-center font-body-md text-body-md">
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
                 (click)="home.scrollIntoView({ behavior: 'smooth' })">
                 Início
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
                 (click)="skills.scrollIntoView({ behavior: 'smooth' })">
                 Habilidades
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
                 (click)="education.scrollIntoView({ behavior: 'smooth' })">
                 Formação
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
                 (click)="featuredProjects.scrollIntoView({ behavior: 'smooth' })">
                 Projetos
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span
+                    class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
         </nav>
-        
+
         <div class="flex items-center gap-2 md:gap-4 z-50">
             <!-- Botão de Tema -->
-            <button (click)="toggleTheme()" 
+            <button (click)="toggleTheme()"
                 class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
                 [title]="isLightMode() ? 'Mudar para tema escuro' : 'Mudar para tema claro'">
                 <span class="material-symbols-outlined text-[24px]">
                     {{ isLightMode() ? 'dark_mode' : 'light_mode' }}
                 </span>
             </button>
-            
+
             <!-- Redes Sociais Desktop -->
             <div class="hidden md:flex items-center gap-2">
-                <a href="mailto:henryrbco@gmail.com" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer" title="E-mail">
+                <a href="mailto:henryrbco@gmail.com"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
+                    title="E-mail">
                     <span class="material-symbols-outlined text-[20px]">mail</span>
                 </a>
-                <a href="https://github.com/raf-henry" target="_blank" rel="noopener" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer" title="GitHub">
-                    <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/github/black' : 'https://cdn.simpleicons.org/github/white'" class="w-5 h-5" alt="GitHub" />
+                <a href="https://github.com/raf-henry" target="_blank" rel="noopener"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
+                    title="GitHub">
+                    <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/github/black' : 'https://cdn.simpleicons.org/github/white'"
+                        class="w-5 h-5" alt="GitHub" />
                 </a>
-                <a href="https://www.linkedin.com/in/henryrafaelbco/" target="_blank" rel="noopener" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer" title="LinkedIn">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-5 h-5" alt="LinkedIn" />
+                <a href="https://www.linkedin.com/in/henryrafaelbco/" target="_blank" rel="noopener"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
+                    title="LinkedIn">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                        class="w-5 h-5" alt="LinkedIn" />
                 </a>
-                <a href="https://wa.me/5562984268923" target="_blank" rel="noopener" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer" title="WhatsApp">
+                <a href="https://wa.me/5562984268923" target="_blank" rel="noopener"
+                    class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
+                    title="WhatsApp">
                     <img src="https://cdn.simpleicons.org/whatsapp/25D366" class="w-5 h-5" alt="WhatsApp" />
                 </a>
             </div>
 
             <!-- Botão Menu Mobile -->
-            <button class="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer" (click)="toggleMobileMenu()">
+            <button
+                class="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
+                (click)="toggleMobileMenu()">
                 <span class="material-symbols-outlined text-[24px]">{{ isMobileMenuOpen() ? 'close' : 'menu' }}</span>
             </button>
         </div>
     </div>
 
     <!-- Navegação Mobile (Overlay) -->
-    <div *ngIf="isMobileMenuOpen()" class="md:hidden absolute top-16 left-0 w-full bg-surface/95 backdrop-blur-3xl border-b border-outline-variant/10 flex flex-col py-6 px-margin gap-6 shadow-2xl animate-fade-in-down" style="animation-duration: 0.3s;">
+    <div *ngIf="isMobileMenuOpen()"
+        class="md:hidden absolute top-16 left-0 w-full bg-surface/95 backdrop-blur-3xl border-b border-outline-variant/10 flex flex-col py-6 px-margin gap-6 shadow-2xl animate-fade-in-down"
+        style="animation-duration: 0.3s;">
         <a class="text-on-surface text-lg font-medium hover:text-primary transition-colors cursor-pointer flex items-center gap-3"
             (click)="home.scrollIntoView({ behavior: 'smooth' }); toggleMobileMenu()">
             <span class="material-symbols-outlined text-primary/80">home</span> Início
@@ -80,19 +99,29 @@
             (click)="featuredProjects.scrollIntoView({ behavior: 'smooth' }); toggleMobileMenu()">
             <span class="material-symbols-outlined text-primary/80">work</span> Projetos
         </a>
-        
+
         <!-- Redes Sociais Mobile -->
         <div class="flex items-center justify-center gap-4 mt-4 pt-6 border-t border-outline-variant/20">
-            <a href="mailto:henryrbco@gmail.com" class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-all" title="E-mail">
+            <a href="mailto:henryrbco@gmail.com"
+                class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-all"
+                title="E-mail">
                 <span class="material-symbols-outlined text-[24px]">mail</span>
             </a>
-            <a href="https://github.com/raf-henry" target="_blank" rel="noopener" class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-all" title="GitHub">
-                <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/github/black' : 'https://cdn.simpleicons.org/github/white'" class="w-6 h-6" alt="GitHub" />
+            <a href="https://github.com/raf-henry" target="_blank" rel="noopener"
+                class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-all"
+                title="GitHub">
+                <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/github/black' : 'https://cdn.simpleicons.org/github/white'"
+                    class="w-6 h-6" alt="GitHub" />
             </a>
-            <a href="https://www.linkedin.com/in/henryrafaelbco/" target="_blank" rel="noopener" class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-all" title="LinkedIn">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-6 h-6" alt="LinkedIn" />
+            <a href="https://www.linkedin.com/in/henryrafaelbco/" target="_blank" rel="noopener"
+                class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-all"
+                title="LinkedIn">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                    class="w-6 h-6" alt="LinkedIn" />
             </a>
-            <a href="https://wa.me/5562984268923" target="_blank" rel="noopener" class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-all" title="WhatsApp">
+            <a href="https://wa.me/5562984268923" target="_blank" rel="noopener"
+                class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface transition-all"
+                title="WhatsApp">
                 <img src="https://cdn.simpleicons.org/whatsapp/25D366" class="w-6 h-6" alt="WhatsApp" />
             </a>
         </div>
@@ -100,25 +129,31 @@
 </header>
 <main class="flex-grow pt-24 pb-stack-xl">
     <!-- Hero Section -->
-    <section
-        #home
+    <section #home
         class="max-w-container-max mx-auto px-margin py-stack-xl min-h-[716px] flex flex-col justify-center relative">
-        <div class="relative z-10 flex flex-col md:flex-row-reverse items-center md:items-center gap-10 lg:gap-20"> 
+        <div class="relative z-10 flex flex-col md:flex-row-reverse items-center md:items-center gap-10 lg:gap-20">
             <!-- Imagem de Perfil -->
-            <div class="flex-shrink-0 w-56 h-56 md:w-[420px] md:h-[420px] rounded-full p-[5px] bg-gradient-to-r from-primary via-tertiary to-primary-fixed-dim animate-gradient-pan shadow-[0_0_50px_rgba(34,211,238,0.25)]">
-                <img src="/images/SelfiePortfolio.jpeg" alt="Henry Rafael" class="w-full h-full rounded-full object-cover border-8 border-surface" />
+            <div
+                class="flex-shrink-0 w-56 h-56 md:w-[420px] md:h-[420px] rounded-full p-[5px] bg-gradient-to-r from-primary via-tertiary to-primary-fixed-dim animate-gradient-pan shadow-[0_0_50px_rgba(34,211,238,0.25)]">
+                <img src="/images/FotoPortfolio.jpeg" alt="Henry Rafael"
+                    class="w-full h-full rounded-full object-cover border-8 border-surface" />
             </div>
 
             <div class="max-w-2xl text-center md:text-left">
-                
+
                 <div class="presentation-content animate-fade-in-up">
-                    <p class="font-label-md text-label-md text-primary mb-stack-sm uppercase tracking-widest">Desenvolvedor
-                    Full-Stack</p>
-                    <h1 class="font-headline-xl text-headline-lg md:text-headline-xl mb-3 text-on-surface leading-tight tracking-tighter">
-                        Olá, sou <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-primary-fixed-dim animate-gradient-pan">Henry Rafael</span>
+                    <p class="font-label-md text-label-md text-primary mb-stack-sm uppercase tracking-widest">
+                        Desenvolvedor
+                        Full-Stack</p>
+                    <h1
+                        class="font-headline-xl text-headline-lg md:text-headline-xl mb-3 text-on-surface leading-tight tracking-tighter">
+                        Olá, sou <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-tertiary to-primary-fixed-dim animate-gradient-pan">Henry
+                            Rafael</span>
                     </h1>
                     <p class="font-body-lg text-[22px] text-on-surface-variant mb-4 leading-relaxed">
-                        Estudo a criação de aplicações web completas, o poder à segurança do backend e a interatividade e design do frontend.
+                        Estudo a criação de aplicações web completas, o poder à segurança do backend e a interatividade
+                        e design do frontend.
                     </p>
                 </div>
                 <div class="flex flex-wrap justify-center md:justify-start gap-4">
@@ -138,9 +173,11 @@
     <!-- Skills & Technologies Section -->
     <section #skills class="max-w-container-max mx-auto px-margin py-stack-xl">
         <div class="mb-stack-lg flex justify-center items-center border-b border-primary/20 pb-4">
-            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">Habilidades & Tecnologias</h2>
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">Habilidades &
+                Tecnologias</h2>
         </div>
-        <div class="roulette-wrapper overflow-hidden relative w-full py-4" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+        <div class="roulette-wrapper overflow-hidden relative w-full py-4"
+            style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
             <!-- Row 1 (Right) -->
             <div class="roulette-track flex gap-4 mb-6">
                 <!-- List 1 original -->
@@ -148,7 +185,7 @@
                 <!-- List 1 clone -->
                 <ng-container *ngTemplateOutlet="row1Cards"></ng-container>
             </div>
-            
+
             <!-- Row 2 (Left) -->
             <div class="roulette-track reverse flex gap-4">
                 <!-- List 2 original -->
@@ -174,7 +211,8 @@
                     <span class="group-hover:text-[#C71A36]">Maven</span>
                 </div>
                 <div class="tech-card group">
-                    <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/jsonwebtokens/000000' : 'https://cdn.simpleicons.org/jsonwebtokens/ffffff'" alt="JWT">
+                    <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/jsonwebtokens/000000' : 'https://cdn.simpleicons.org/jsonwebtokens/ffffff'"
+                        alt="JWT">
                     <span class="group-hover:text-primary">JWT</span>
                 </div>
                 <div class="tech-card group">
@@ -186,7 +224,8 @@
                     <span class="group-hover:text-[#F05032]">Git</span>
                 </div>
                 <div class="tech-card group">
-                    <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/github/black' : 'https://cdn.simpleicons.org/github/white'" alt="GitHub">
+                    <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/github/black' : 'https://cdn.simpleicons.org/github/white'"
+                        alt="GitHub">
                     <span class="group-hover:text-primary">GitHub</span>
                 </div>
                 <div class="tech-card group">
@@ -215,7 +254,8 @@
                     <span class="group-hover:text-[#06B6D4]">TailwindCSS</span>
                 </div>
                 <div class="tech-card group">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                        alt="JavaScript">
                     <span class="group-hover:text-[#F7DF1E]">JavaScript</span>
                 </div>
                 <div class="tech-card group">
@@ -223,11 +263,13 @@
                     <span class="group-hover:text-[#E34F26]">HTML</span>
                 </div>
                 <div class="tech-card group">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                        alt="TypeScript">
                     <span class="group-hover:text-[#3178C6]">TypeScript</span>
                 </div>
                 <div class="tech-card group">
-                    <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/vercel/black' : 'https://cdn.simpleicons.org/vercel/white'" alt="Vercel">
+                    <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/vercel/black' : 'https://cdn.simpleicons.org/vercel/white'"
+                        alt="Vercel">
                     <span class="group-hover:text-primary">Vercel</span>
                 </div>
             </div>
@@ -240,10 +282,13 @@
             <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">Formação</h2>
         </div>
         <div class="flex justify-center">
-            <div class="project-card w-full max-w-4xl group relative bg-surface-container-low p-10 lg:p-14 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] overflow-hidden">
+            <div
+                class="project-card w-full max-w-4xl group relative bg-surface-container-low p-10 lg:p-14 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] overflow-hidden">
                 <!-- Decorative element -->
-                <div class="absolute -right-16 -top-16 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-500"></div>
-                
+                <div
+                    class="absolute -right-16 -top-16 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-all duration-500">
+                </div>
+
                 <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
                     <div class="flex-grow">
                         <div class="flex items-center gap-3 mb-4">
@@ -252,7 +297,8 @@
                                 3º período • Conclusão prevista para 12/2027
                             </p>
                         </div>
-                        <h3 class="font-headline-lg text-headline-md md:text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors duration-500 leading-tight">
+                        <h3
+                            class="font-headline-lg text-headline-md md:text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors duration-500 leading-tight">
                             Análise e Desenvolvimento de Sistemas
                         </h3>
                         <div class="flex items-center gap-3 text-on-surface-variant">
@@ -262,8 +308,10 @@
                             </p>
                         </div>
                     </div>
-                    <div class="hidden md:flex flex-shrink-0 w-24 h-24 md:mr-10 rounded-full bg-primary/5 items-center justify-center border border-primary/10 group-hover:border-primary/30 group-hover:bg-primary/10 transition-all duration-700">
-                        <span class="material-symbols-outlined text-primary animate-float-subtle" style="font-size: 40px;">school</span>
+                    <div
+                        class="hidden md:flex flex-shrink-0 w-24 h-24 md:mr-10 rounded-full bg-primary/5 items-center justify-center border border-primary/10 group-hover:border-primary/30 group-hover:bg-primary/10 transition-all duration-700">
+                        <span class="material-symbols-outlined text-primary animate-float-subtle"
+                            style="font-size: 40px;">school</span>
                     </div>
                 </div>
             </div>
@@ -273,7 +321,8 @@
     <!-- Featured Projects -->
     <section #featuredProjects class="max-w-container-max mx-auto px-margin py-stack-xl">
         <div class="mb-stack-lg flex justify-center items-center border-b border-primary/20 pb-4">
-            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">Projetos em Andamento</h2>
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">Projetos em
+                Andamento</h2>
         </div>
         <div class="flex flex-col gap-stack-lg">
             <!-- Project Card 1: FinanceSys -->
@@ -337,7 +386,8 @@
                         autônoma de extratos bancários e dashboard reativo.
                     </p>
                     <div class="mt-auto">
-                        <a href="https://finance-sys-front-end.vercel.app/" target="_blank" rel="noopener" class="text-primary font-label-md text-label-md flex items-center gap-2 group/link cursor-pointer">
+                        <a href="https://finance-sys-front-end.vercel.app/" target="_blank" rel="noopener"
+                            class="text-primary font-label-md text-label-md flex items-center gap-2 group/link cursor-pointer">
                             Ver Projeto <span
                                 class="material-symbols-outlined text-[18px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
                         </a>
@@ -406,7 +456,8 @@
                         cálculo automático de multas.
                     </p>
                     <div class="mt-auto">
-                        <a href="https://github.com/raf-henry/Biblioteca" target="_blank" rel="noopener" class="text-primary font-label-md text-label-md flex items-center gap-2 group/link cursor-pointer">
+                        <a href="https://github.com/raf-henry/Biblioteca" target="_blank" rel="noopener"
+                            class="text-primary font-label-md text-label-md flex items-center gap-2 group/link cursor-pointer">
                             Ver Projeto <span
                                 class="material-symbols-outlined text-[18px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
                         </a>
@@ -424,20 +475,26 @@
         </div>
         <div class="max-w-7xl mx-auto flex flex-wrap justify-center gap-6">
             <!-- Email -->
-            <a href="mailto:henryrbco@gmail.com" class="project-card group bg-surface-container-low p-10 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 flex flex-col items-center text-center gap-6 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] min-w-[260px] flex-1 max-w-[300px]">
-                <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-primary/10 transition-all duration-500">
-                    <span class="material-symbols-outlined text-primary text-[32px] group-hover:scale-110 transition-transform">mail</span>
+            <a href="mailto:henryrbco@gmail.com"
+                class="project-card group bg-surface-container-low p-10 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 flex flex-col items-center text-center gap-6 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] min-w-[260px] flex-1 max-w-[300px]">
+                <div
+                    class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-primary/10 transition-all duration-500">
+                    <span
+                        class="material-symbols-outlined text-primary text-[32px] group-hover:scale-110 transition-transform">mail</span>
                 </div>
                 <div>
                     <p class="font-label-md text-primary uppercase tracking-[0.2em] text-xs mb-2">E-mail</p>
                     <p class="font-body-lg text-on-surface break-all font-medium">henryrbco@gmail.com</p>
                 </div>
             </a>
-            
+
             <!-- GitHub -->
-            <a href="https://github.com/raf-henry" target="_blank" rel="noopener" class="project-card group bg-surface-container-low p-10 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 flex flex-col items-center text-center gap-6 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] min-w-[260px] flex-1 max-w-[300px]">
-                <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-primary/10 transition-all duration-500">
-                    <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/github/black' : 'https://cdn.simpleicons.org/github/white'" class="w-8 h-8 group-hover:scale-110 transition-transform" alt="GitHub" />
+            <a href="https://github.com/raf-henry" target="_blank" rel="noopener"
+                class="project-card group bg-surface-container-low p-10 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 flex flex-col items-center text-center gap-6 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] min-w-[260px] flex-1 max-w-[300px]">
+                <div
+                    class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-primary/10 transition-all duration-500">
+                    <img [src]="isLightMode() ? 'https://cdn.simpleicons.org/github/black' : 'https://cdn.simpleicons.org/github/white'"
+                        class="w-8 h-8 group-hover:scale-110 transition-transform" alt="GitHub" />
                 </div>
                 <div>
                     <p class="font-label-md text-primary uppercase tracking-[0.2em] text-xs mb-2">GitHub</p>
@@ -446,9 +503,12 @@
             </a>
 
             <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/henryrafaelbco/" target="_blank" rel="noopener" class="project-card group bg-surface-container-low p-10 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 flex flex-col items-center text-center gap-6 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] min-w-[260px] flex-1 max-w-[300px]">
-                <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-primary/10 transition-all duration-500">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" class="w-8 h-8 group-hover:scale-110 transition-transform" alt="LinkedIn" />
+            <a href="https://www.linkedin.com/in/henryrafaelbco/" target="_blank" rel="noopener"
+                class="project-card group bg-surface-container-low p-10 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 flex flex-col items-center text-center gap-6 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] min-w-[260px] flex-1 max-w-[300px]">
+                <div
+                    class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-primary/10 transition-all duration-500">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                        class="w-8 h-8 group-hover:scale-110 transition-transform" alt="LinkedIn" />
                 </div>
                 <div>
                     <p class="font-label-md text-primary uppercase tracking-[0.2em] text-xs mb-2">LinkedIn</p>
@@ -457,9 +517,12 @@
             </a>
 
             <!-- WhatsApp -->
-            <a href="https://wa.me/5562984268923" target="_blank" rel="noopener" class="project-card group bg-surface-container-low p-10 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 flex flex-col items-center text-center gap-6 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] min-w-[260px] flex-1 max-w-[300px]">
-                <div class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-primary/10 transition-all duration-500">
-                    <img src="https://cdn.simpleicons.org/whatsapp/25D366" class="w-8 h-8 group-hover:scale-110 transition-transform" alt="WhatsApp" />
+            <a href="https://wa.me/5562984268923" target="_blank" rel="noopener"
+                class="project-card group bg-surface-container-low p-10 rounded-DEFAULT border border-primary/10 hover:border-primary/40 transition-all duration-500 flex flex-col items-center text-center gap-6 hover:shadow-[0_20px_60px_-20px_rgba(34,211,238,0.15)] min-w-[260px] flex-1 max-w-[300px]">
+                <div
+                    class="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:bg-primary/10 transition-all duration-500">
+                    <img src="https://cdn.simpleicons.org/whatsapp/25D366"
+                        class="w-8 h-8 group-hover:scale-110 transition-transform" alt="WhatsApp" />
                 </div>
                 <div>
                     <p class="font-label-md text-primary uppercase tracking-[0.2em] text-xs mb-2">WhatsApp</p>
