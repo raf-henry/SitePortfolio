@@ -10,31 +10,64 @@
         <nav class="hidden md:flex gap-gutter items-center font-body-md text-body-md">
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
                 (click)="home.scrollIntoView({ behavior: 'smooth' })">
-                Início
+                {{ t.navHome }}
                 <span
                     class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
                 (click)="skills.scrollIntoView({ behavior: 'smooth' })">
-                Habilidades
+                {{ t.navSkills }}
                 <span
                     class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
                 (click)="education.scrollIntoView({ behavior: 'smooth' })">
-                Formação
+                {{ t.navEducation }}
                 <span
                     class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
             <a class="text-on-surface-variant hover:text-primary relative group transition-colors duration-300 cursor-pointer pb-1"
                 (click)="featuredProjects.scrollIntoView({ behavior: 'smooth' })">
-                Projetos
+                {{ t.navProjects }}
                 <span
                     class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
         </nav>
 
         <div class="flex items-center gap-2 md:gap-4 z-50">
+            <!-- Seletor de Idioma (Estilo Listbox) -->
+            <div class="relative language-selector">
+                <button (click)="toggleLanguageMenu($event)"
+                    class="flex items-center gap-1.5 px-3 h-10 rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer font-label-md text-xs font-semibold"
+                    [title]="'Idioma selecionado: ' + selectedLanguage().name">
+                    <img [src]="'https://flagcdn.com/w40/' + selectedLanguage().flag + '.png'" [alt]="selectedLanguage().name"
+                        class="w-5 h-5 rounded-full object-cover shadow-xs border border-white/10 shrink-0" />
+                    <span class="tracking-wider uppercase font-bold">{{ selectedLanguage().code }}</span>
+                    <span class="material-symbols-outlined text-[18px] transition-transform duration-300"
+                        [class.rotate-180]="isLanguageMenuOpen()">
+                        expand_more
+                    </span>
+                </button>
+
+                <!-- Dropdown Listbox -->
+                <div *ngIf="isLanguageMenuOpen()"
+                    class="absolute right-0 top-full mt-2 w-52 rounded-xl bg-surface-container-high/95 backdrop-blur-xl border border-outline-variant/20 shadow-2xl p-1.5 z-50 animate-fade-in-down">
+                    <button *ngFor="let lang of languages" (click)="selectLanguage(lang)"
+                        class="w-full flex items-center justify-between px-3 py-2.5 rounded-lg transition-colors duration-200 cursor-pointer text-left font-medium text-sm group"
+                        [ngClass]="selectedLanguage().code === lang.code ? 'bg-primary/15 text-primary' : 'text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface'">
+                        <div class="flex items-center gap-3">
+                            <img [src]="'https://flagcdn.com/w40/' + lang.flag + '.png'" [alt]="lang.name"
+                                class="w-6 h-6 rounded-full object-cover shadow-xs shrink-0 border border-white/10" />
+                            <span class="font-body-md text-sm">{{ lang.name }}</span>
+                        </div>
+                        <span *ngIf="selectedLanguage().code === lang.code"
+                            class="material-symbols-outlined text-primary text-[18px]">
+                            check
+                        </span>
+                    </button>
+                </div>
+            </div>
+
             <!-- Botão de Tema -->
             <button (click)="toggleTheme()"
                 class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-primary/20 text-on-surface transition-all duration-300 border border-outline-variant/20 cursor-pointer"
@@ -85,19 +118,19 @@
         style="animation-duration: 0.3s;">
         <a class="text-on-surface text-lg font-medium hover:text-primary transition-colors cursor-pointer flex items-center gap-3"
             (click)="home.scrollIntoView({ behavior: 'smooth' }); toggleMobileMenu()">
-            <span class="material-symbols-outlined text-primary/80">home</span> Início
+            <span class="material-symbols-outlined text-primary/80">home</span> {{ t.navHome }}
         </a>
         <a class="text-on-surface text-lg font-medium hover:text-primary transition-colors cursor-pointer flex items-center gap-3"
             (click)="skills.scrollIntoView({ behavior: 'smooth' }); toggleMobileMenu()">
-            <span class="material-symbols-outlined text-primary/80">terminal</span> Habilidades
+            <span class="material-symbols-outlined text-primary/80">terminal</span> {{ t.navSkills }}
         </a>
         <a class="text-on-surface text-lg font-medium hover:text-primary transition-colors cursor-pointer flex items-center gap-3"
             (click)="education.scrollIntoView({ behavior: 'smooth' }); toggleMobileMenu()">
-            <span class="material-symbols-outlined text-primary/80">school</span> Formação
+            <span class="material-symbols-outlined text-primary/80">school</span> {{ t.navEducation }}
         </a>
         <a class="text-on-surface text-lg font-medium hover:text-primary transition-colors cursor-pointer flex items-center gap-3"
             (click)="featuredProjects.scrollIntoView({ behavior: 'smooth' }); toggleMobileMenu()">
-            <span class="material-symbols-outlined text-primary/80">work</span> Projetos
+            <span class="material-symbols-outlined text-primary/80">work</span> {{ t.navProjects }}
         </a>
 
         <!-- Redes Sociais Mobile -->
@@ -139,7 +172,7 @@
                     class="w-full h-full rounded-full object-cover border-8 border-surface" />
             </div>
 
-            <div class="max-w-2xl text-center md:text-left">
+            <div class="max-w-3xl text-center md:text-left">
 
                 <div class="presentation-content animate-fade-in-up">
                     <p class="font-label-md text-label-md text-primary mb-stack-sm uppercase tracking-widest">
@@ -148,7 +181,7 @@
                             }}</span>
                     </p>
                     <h1
-                        class="font-headline-xl text-headline-lg md:text-headline-xl mb-3 text-on-surface leading-tight tracking-tighter">
+                        class="font-headline-xl text-headline-lg md:text-[48px] lg:text-[56px] xl:text-headline-xl mb-3 text-on-surface leading-tight tracking-tighter md:whitespace-nowrap">
                         <span>{{ fullGreeting.slice(0, greetingLength()) }}</span><span
                             *ngIf="currentTyping() === 'heading' && greetingLength() < fullGreeting.length"
                             class="animate-pulse">|</span><span class="opacity-0">{{
@@ -171,7 +204,7 @@
                     [ngClass]="showHeroButton() ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'">
                     <button (click)="featuredProjects.scrollIntoView({ behavior: 'smooth' })"
                         class="bg-primary-container text-on-primary font-label-md text-label-md px-8 py-4 rounded-DEFAULT transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(34,211,238,0.4)] glow-effect flex items-center gap-2 group/btn">
-                        Ver Projetos <span
+                        {{ t.viewProjectsBtn }} <span
                             class="material-symbols-outlined text-[20px] group-hover/btn:translate-x-1 transition-transform">arrow_downward</span>
                     </button>
                 </div>
@@ -185,8 +218,7 @@
     <!-- Skills & Technologies Section -->
     <section #skills class="reveal max-w-container-max mx-auto px-margin py-stack-xl">
         <div class="mb-stack-lg flex justify-center items-center border-b border-primary/20 pb-4">
-            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">Habilidades &
-                Tecnologias</h2>
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">{{ t.skillsTitle }}</h2>
         </div>
         <div class="roulette-wrapper overflow-hidden relative w-full py-4"
             style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
@@ -291,7 +323,7 @@
     <!-- Education Section -->
     <section #education class="reveal max-w-container-max mx-auto px-margin py-stack-xl">
         <div class="mb-stack-lg flex justify-center items-center border-b border-primary/20 pb-4">
-            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">Formação</h2>
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">{{ t.educationTitle }}</h2>
         </div>
         <div class="flex justify-center">
             <div
@@ -306,17 +338,17 @@
                         <div class="flex items-center gap-3 mb-4">
                             <span class="w-10 h-0.5 bg-primary/40"></span>
                             <p class="text-primary font-label-md uppercase tracking-[0.2em] text-xs">
-                                4º período • Conclusão prevista para 12/2027
+                                {{ t.educationPeriod }}
                             </p>
                         </div>
                         <h3
                             class="font-headline-lg text-headline-md md:text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors duration-500 leading-tight">
-                            Análise e Desenvolvimento de Sistemas
+                            {{ t.educationCourse }}
                         </h3>
                         <div class="flex items-center gap-3 text-on-surface-variant">
                             <span class="material-symbols-outlined text-primary/70">location_on</span>
                             <p class="font-body-md text-body-md uppercase tracking-wider">
-                                UNIGOIÁS – CENTRO UNIVERSITÁRIO DE GOIÁS
+                                {{ t.educationInstitution }}
                             </p>
                         </div>
                     </div>
@@ -333,8 +365,7 @@
     <!-- Featured Projects -->
     <section #featuredProjects class="reveal max-w-container-max mx-auto px-margin py-stack-xl">
         <div class="mb-stack-lg flex justify-center items-center border-b border-primary/20 pb-4">
-            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">Projetos em
-                Andamento</h2>
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">{{ t.projectsTitle }}</h2>
         </div>
         <div class="flex flex-col gap-stack-lg">
             <!-- Project Card 1: FinanceSys -->
@@ -394,13 +425,12 @@
                         class="font-headline-lg text-headline-md md:text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors">
                         FinanceSys</h3>
                     <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
-                        Sistema inteligente de gestão financeira com integração à API Google Gemini para leitura
-                        autônoma de extratos bancários e dashboard reativo.
+                        {{ t.financeSysDesc }}
                     </p>
                     <div class="mt-auto">
                         <a href="https://finance-sys-front-end.vercel.app/" target="_blank" rel="noopener"
                             class="text-primary font-label-md text-label-md flex items-center gap-2 group/link cursor-pointer">
-                            Ver Projeto <span
+                            {{ t.viewProject }} <span
                                 class="material-symbols-outlined text-[18px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
                         </a>
                     </div>
@@ -464,13 +494,12 @@
                         class="font-headline-lg text-headline-md md:text-headline-lg mb-4 text-on-surface group-hover:text-primary transition-colors">
                         BibliotecaSystem</h3>
                     <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
-                        Solução moderna para gestão de bibliotecas com estética Glassmorphism, controle de inventário e
-                        cálculo automático de multas.
+                        {{ t.bibliotecaSysDesc }}
                     </p>
                     <div class="mt-auto">
                         <a href="https://github.com/raf-henry/Biblioteca" target="_blank" rel="noopener"
                             class="text-primary font-label-md text-label-md flex items-center gap-2 group/link cursor-pointer">
-                            Ver Projeto <span
+                            {{ t.viewProject }} <span
                                 class="material-symbols-outlined text-[18px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
                         </a>
                     </div>
@@ -483,7 +512,7 @@
     <!-- Contact Section -->
     <section #contact class="reveal max-w-container-max mx-auto px-margin py-stack-xl">
         <div class="mb-stack-lg flex justify-center items-center border-b border-primary/20 pb-4">
-            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">Contato</h2>
+            <h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface text-center">{{ t.contactTitle }}</h2>
         </div>
         <div class="max-w-7xl mx-auto flex flex-wrap justify-center gap-6">
             <!-- Email -->
@@ -495,7 +524,7 @@
                         class="material-symbols-outlined text-primary text-[32px] group-hover:scale-110 transition-transform">mail</span>
                 </div>
                 <div>
-                    <p class="font-label-md text-primary uppercase tracking-[0.2em] text-xs mb-2">E-mail</p>
+                    <p class="font-label-md text-primary uppercase tracking-[0.2em] text-xs mb-2">{{ t.contactEmailLabel }}</p>
                     <p class="font-body-lg text-on-surface break-all font-medium">henryrbco@gmail.com</p>
                 </div>
             </a>
@@ -510,7 +539,7 @@
                 </div>
                 <div>
                     <p class="font-label-md text-primary uppercase tracking-[0.2em] text-xs mb-2">GitHub</p>
-                    <p class="font-body-lg text-on-surface font-medium">Veja meus Projetos</p>
+                    <p class="font-body-lg text-on-surface font-medium">{{ t.contactGithubLabel }}</p>
                 </div>
             </a>
 
@@ -524,7 +553,7 @@
                 </div>
                 <div>
                     <p class="font-label-md text-primary uppercase tracking-[0.2em] text-xs mb-2">LinkedIn</p>
-                    <p class="font-body-lg text-on-surface font-medium">Conecte-se comigo</p>
+                    <p class="font-body-lg text-on-surface font-medium">{{ t.contactLinkedinLabel }}</p>
                 </div>
             </a>
 
@@ -538,7 +567,7 @@
                 </div>
                 <div>
                     <p class="font-label-md text-primary uppercase tracking-[0.2em] text-xs mb-2">WhatsApp</p>
-                    <p class="font-body-lg text-on-surface font-medium">Contate-me</p>
+                    <p class="font-body-lg text-on-surface font-medium">{{ t.contactWhatsappLabel }}</p>
                 </div>
             </a>
 
